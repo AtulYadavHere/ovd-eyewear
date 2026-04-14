@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OVD Eyewear - Where Clarity meets fashion. Premium quality frames, latest designs, and accurate eye care solutions in Seoni, Madhya Pradesh.">
+  <meta name="keywords" content="eyewear, spectacles, sunglasses, optical, eye care, Seoni, Madhya Pradesh">
+  <meta name="author" content="OVD Eyewear">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="OVD Eyewear - Where Clarity meets fashion">
+  <meta property="og:description" content="Premium quality frames, latest designs, and accurate eye care solutions.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_IN">
+
+  <title>OVD Eyewear - Where Clarity meets fashion</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%230093D9'/><circle cx='50' cy='50' r='20' fill='white'/></svg>">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Font for Hindi -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="OVD Eyewear Home">
+        <div class="nav__logo-icon">OVD</div>
+        <div class="nav__logo-text">
+          <span>OVD</span>
+          <span>EYEWEAR</span>
+        </div>
+      </a>
+
+      <div class="nav__menu">
+        <a href="index.html" class="nav__link nav__link--active">Home</a>
+        <a href="products.html" class="nav__link">Products</a>
+        <a href="services.html" class="nav__link">Services</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+
+      <div class="nav__lang">
+        <button class="nav__lang-btn nav__lang-btn--active" data-lang="en">EN</button>
+        <button class="nav__lang-btn" data-lang="hi">हि</button>
+      </div>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile">
+      <a href="index.html" class="nav__mobile-link">Home</a>
+      <a href="products.html" class="nav__mobile-link">Products</a>
+      <a href="services.html" class="nav__mobile-link">Services</a>
+      <a href="about.html" class="nav__mobile-link">About</a>
+      <a href="contact.html" class="nav__mobile-link">Contact</a>
+      <div style="padding: var(--space-md) 0;">
+        <div class="nav__lang" style="justify-content: center;">
+          <button class="nav__lang-btn nav__lang-btn--active" data-lang="en">English</button>
+          <button class="nav__lang-btn" data-lang="hi">हिंदी</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content fade-in">
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          <span>Mon-Sun: 10:00 AM - 8:00 PM</span>
+        </div>
+        <h1 class="hero__title">
+          <span>Where</span>
+          <span class="text-gradient">Clarity</span>
+          <span>meets fashion</span>
+        </h1>
+        <p class="hero__tagline">OVD Eyewear — A Complete Eyewear Solution</p>
+        <p class="hero__subtitle">
+          <span class="en-content">Discover our premium collection of frames and lenses. Experience clarity, confidence, and class with every pair.</span>
+          <span class="hi-content">हमारे प्रीमियम फ्रेम और लेंस के संग्रह को देखें। हर जोड़ी के साथ क्लैरिटी, कॉन्फिडेंस और क्लास का अनुभव लें।</span>
+        </p>
+        <div class="hero__cta">
+          <a href="contact.html" class="btn btn--primary btn--lg">
+            Book Appointment
+          </a>
+          <a href="products.html" class="btn btn--secondary btn--lg">
+            View Collection
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__visual fade-in">
+        <div class="hero__glasses">
+          <div class="hero__glasses-inner">
+            <span class="hero__glasses-icon">👓</span>
+          </div>
+        </div>
+        <div class="hero__floating hero__floating--1">
+          <span class="en-content">Premium Quality</span>
+          <span class="hi-content">प्रीमियम क्वालिटी</span>
+        </div>
+        <div class="hero__floating hero__floating--2">
+          <span class="en-content">Latest Trends</span>
+          <span class="hi-content">लेटेस्ट ट्रेंड्स</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section">
+    <div class="container">
+      <div class="features">
+        <div class="feature-card fade-in">
+          <div class="feature-card__icon">👁️</div>
+          <h3 class="feature-card__title">
+            <span class="en-content">Premium Frames</span>
+            <span class="hi-content">प्रीमियम फ्रेम</span>
+          </h3>
+          <p class="feature-card__text">
+            <span class="en-content">High-quality frames in Metal, Acetate, Titanium, and more.</span>
+            <span class="hi-content">मेटल, एसीटेट, टाइटेनियम और अन्य में उच्च गुणवत्ता वाले फ्रेम।</span>
+          </p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-card__icon">🔷</div>
+          <h3 class="feature-card__title">
+            <span class="en-content">Advanced Lenses</span>
+            <span class="hi-content">एडवांस लेंस</span>
+          </h3>
+          <p class="feature-card__text">
+            <span class="en-content">Single vision, Bifocal, Progressive, and Blue Light Blocking.</span>
+            <span class="hi-content">सिंगल विज़न, बाइफोकल, प्रोग्रेसिव और ब्लू लाइट ब्लॉकिंग।</span>
+          </p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-card__icon">🛠️</div>
+          <h3 class="feature-card__title">
+            <span class="en-content">Expert Services</span>
+            <span class="hi-content">विशेषज्ञ सेवाएं</span>
+          </h3>
+          <p class="feature-card__text">
+            <span class="en-content">Repairs, adjustments, custom fitting, and free cleaning.</span>
+            <span class="hi-content">मरम्मत, एडजस्टमेंट, कस्टम फिटिंग और फ्री क्लीनिंग।</span>
+          </p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-card__icon">💳</div>
+          <h3 class="feature-card__title">
+            <span class="en-content">Easy Payment</span>
+            <span class="hi-content">आसान पेमेंट</span>
+          </h3>
+          <p class="feature-card__text">
+            <span class="en-content">Accepting Card, Cash, and UPI payments.</span>
+            <span class="hi-content">कार्ड, कैश और UPI पेमेंट स्वीकार।</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Preview -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-header__tagline">
+          <span class="en-content">Our Collection</span>
+          <span class="hi-content">हमारा संग्रह</span>
+        </span>
+        <h2 class="section-header__title">
+          <span class="en-content">Premium Eyewear for Every Style</span>
+          <span class="hi-content">हर स्टाइल के लिए प्रीमियम आईवियर</span>
+        </h2>
+        <p class="section-header__text">
+          <span class="en-content">From classic frames to trendy sunglasses, find your perfect pair.</span>
+          <span class="hi-content">क्लासिक फ्रेम से लेकर ट्रेंडी सनग्लासेस तक, अपना परफेक्ट पेयर खोजें।</span>
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card fade-in">
+          <div class="product-card__image">🕶️</div>
+          <div class="product-card__content">
+            <h3 class="product-card__title">
+              <span class="en-content">Sunglasses</span>
+              <span class="hi-content">सनग्लासेस</span>
+            </h3>
+            <p class="product-card__text">
+              <span class="en-content">UV protection with style. Perfect for sunny days.</span>
+              <span class="hi-content">स्टाइल के साथ UV प्रोटेक्शन। धूप वाले दिनों के लिए परफेक्ट।</span>
+            </p>
+            <div class="product-card__list">
+              <span class="product-card__tag">UV400</span>
+              <span class="product-card__tag">Polarized</span>
+              <span class="product-card__tag">Gradient</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card fade-in">
+          <div class="product-card__image">👓</div>
+          <div class="product-card__content">
+            <h3 class="product-card__title">
+              <span class="en-content">Optical Frames</span>
+              <span class="hi-content">ऑप्टिकल फ्रेम</span>
+            </h3>
+            <p class="product-card__text">
+              <span class="en-content">Premium frames for everyday clarity and confidence.</span>
+              <span class="hi-content">रोजमर्रा की क्लैरिटी और कॉन्फिडेंस के लिए प्रीमियम फ्रेम।</span>
+            </p>
+            <div class="product-card__list">
+              <span class="product-card__tag">Metal</span>
+              <span class="product-card__tag">Acetate</span>
+              <span class="product-card__tag">Titanium</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card fade-in">
+          <div class="product-card__image">💻</div>
+          <div class="product-card__content">
+            <h3 class="product-card__title">
+              <span class="en-content">Computer Glasses</span>
+              <span class="hi-content">कंप्यूटर ग्लासेस</span>
+            </h3>
+            <p class="product-card__text">
+              <span class="en-content">Blue light blocking for reduced eye strain.</span>
+              <span class="hi-content">आंखों के तनाव को कम करने के लिए ब्लू लाइट ब्लॉकिंग।</span>
+            </p>
+            <div class="product-card__list">
+              <span class="product-card__tag">Anti-Glare</span>
+              <span class="product-card__tag">Blue Light+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-xl fade-in">
+        <a href="products.html" class="btn btn--primary">
+          <span class="en-content">View All Products</span>
+          <span class="hi-content">सभी प्रोडक्ट्स देखें</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-header__tagline">
+          <span class="en-content">What We Offer</span>
+          <span class="hi-content">हम क्या देते हैं</span>
+        </span>
+        <h2 class="section-header__title">
+          <span class="en-content">Complete Eye Care Solutions</span>
+          <span class="hi-content">पूर्ण आई केयर सॉल्यूशंस</span>
+        </h2>
+        <p class="section-header__text">
+          <span class="en-content">Professional services to keep your eyes healthy and your vision clear.</span>
+          <span class="hi-content">आपकी आंखों को स्वस्थ और विज़न को क्लियर रखने के लिए प्रोफेशनल सेवाएं।</span>
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-card__icon">🔧</div>
+          <h3 class="service-card__title">
+            <span class="en-content">Repairs & Adjustments</span>
+            <span class="hi-content">मरम्मत और एडजस्टमेंट</span>
+          </h3>
+          <p class="service-card__text">
+            <span class="en-content">Expert repairs and adjustments to keep your glasses fitting perfectly.</span>
+            <span class="hi-content">आपके चश्मे को परफेक्ट फिटिंग में रखने के लिए विशेषज्ञ मरम्मत।</span>
+          </p>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-card__icon">✨</div>
+          <h3 class="service-card__title">
+            <span class="en-content">Free Ultrasonic Cleaning</span>
+            <span class="hi-content">फ्री अल्ट्रासोनिक क्लीनिंग</span>
+          </h3>
+          <p class="service-card__text">
+            <span class="en-content">Complimentary ultrasonic cleaning to keep your lenses spotless.</span>
+            <span class="hi-content">आपके लेंस को स्पॉटलेस रखने के लिए फ्री अल्ट्रासोनिक क्लीनिंग।</span>
+          </p>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-card__icon">📐</div>
+          <h3 class="service-card__title">
+            <span class="en-content">Custom Fitting</span>
+            <span class="hi-content">कस्टम फिटिंग</span>
+          </h3>
+          <p class="service-card__text">
+            <span class="en-content">Personalized fitting service for maximum comfort.</span>
+            <span class="hi-content">अधिकतम कम्फर्ट के लिए पर्सनलाइज्ड फिटिंग सर्विस।</span>
+          </p>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-card__icon">🎨</div>
+          <h3 class="service-card__title">
+            <span class="en-content">Tailor-Made Lenses</span>
+            <span class="hi-content">टेलर-मेड लेंस</span>
+          </h3>
+          <p class="service-card__text">
+            <span class="en-content">Custom lens solutions tailored to your specific needs.</span>
+            <span class="hi-content">आपकी विशिष्ट जरूरतों के अनुसार कस्टम लेंस सॉल्यूशंस।</span>
+          </p>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-card__icon">🌈</div>
+          <h3 class="service-card__title">
+            <span class="en-content">Tinted Lenses</span>
+            <span class="hi-content">टिंटेड लेंस</span>
+          </h3>
+          <p class="service-card__text">
+            <span class="en-content">Colored and tinted lenses for fashion and function.</span>
+            <span class="hi-content">फैशन और फंक्शन के लिए कलरफुल और टिंटेड लेंस।</span>
+          </p>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-card__icon">📱</div>
+          <h3 class="service-card__title">
+            <span class="en-content">WhatsApp Support</span>
+            <span class="hi-content">व्हाट्सएप सपोर्ट</span>
+          </h3>
+          <p class="service-card__text">
+            <span class="en-content">Easy booking and queries via WhatsApp.</span>
+            <span class="hi-content">व्हाट्सएप के जरिए आसान बुकिंग और सवाल।</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center mt-xl fade-in">
+        <a href="services.html" class="btn btn--secondary">
+          <span class="en-content">View All Services</span>
+          <span class="hi-content">सभी सेवाएं देखें</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="container">
+      <div class="cta fade-in">
+        <h2 class="cta__title">
+          <span class="en-content">Ready to See Clearly?</span>
+          <span class="hi-content">क्लियर दिखने के लिए तैयार?</span>
+        </h2>
+        <p class="cta__text">
+          <span class="en-content">Book an appointment today and experience the OVD Eyewear difference. Your perfect pair is waiting!</span>
+          <span class="hi-content">आज ही अपॉइंटमेंट बुक करें और OVD Eyewear का अनुभव लें। आपका परफेक्ट पेयर इंतज़ार कर रहा है!</span>
+        </p>
+        <a href="contact.html" class="btn btn--primary btn--lg">
+          <span class="en-content">Book Appointment Now</span>
+          <span class="hi-content">अभी अपॉइंटमेंट बुक करें</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section">
+    <div class="container">
+      <div class="newsletter fade-in">
+        <h2 class="newsletter__title">
+          <span class="en-content">Stay Updated</span>
+          <span class="hi-content">अपडेटेड रहें</span>
+        </h2>
+        <p class="newsletter__text">
+          <span class="en-content">Subscribe to get the latest offers and new arrivals.</span>
+          <span class="hi-content">लेटेस्ट ऑफर और नए प्रोडक्ट्स पाने के लिए सब्सक्राइब करें।</span>
+        </p>
+        <form class="newsletter__form" action="#" method="POST">
+          <input type="email" class="newsletter__input" placeholder="Enter your email" required aria-label="Email address">
+          <button type="submit" class="btn btn--primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <div class="footer__logo-icon">OVD</div>
+            <span class="footer__logo-text">EYEWEAR</span>
+          </div>
+          <p class="footer__tagline">Where Clarity meets fashion. A complete eyewear solution for everyone.</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/shuklachashmagharopticals" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
+              📷
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener">
+              📘
+            </a>
+            <a href="#" class="footer__social-link" aria-label="WhatsApp" target="_blank" rel="noopener">
+              💬
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">
+            <span class="en-content">Quick Links</span>
+            <span class="hi-content">त्वरित लिंक</span>
+          </h4>
+          <div class="footer__links">
+            <a href="index.html" class="footer__link">
+              <span class="en-content">Home</span>
+              <span class="hi-content">होम</span>
+            </a>
+            <a href="products.html" class="footer__link">
+              <span class="en-content">Products</span>
+              <span class="hi-content">प्रोडक्ट्स</span>
+            </a>
+            <a href="services.html" class="footer__link">
+              <span class="en-content">Services</span>
+              <span class="hi-content">सेवाएं</span>
+            </a>
+            <a href="about.html" class="footer__link">
+              <span class="en-content">About Us</span>
+              <span class="hi-content">हमारे बारे में</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">
+            <span class="en-content">Services</span>
+            <span class="hi-content">सेवाएं</span>
+          </h4>
+          <div class="footer__links">
+            <a href="services.html" class="footer__link">
+              <span class="en-content">Repairs</span>
+              <span class="hi-content">मरम्मत</span>
+            </a>
+            <a href="services.html" class="footer__link">
+              <span class="en-content">Adjustments</span>
+              <span class="hi-content">एडजस्टमेंट</span>
+            </a>
+            <a href="services.html" class="footer__link">
+              <span class="en-content">Custom Fitting</span>
+              <span class="hi-content">कस्टम फिटिंग</span>
+            </a>
+            <a href="services.html" class="footer__link">
+              <span class="en-content">Free Cleaning</span>
+              <span class="hi-content">फ्री क्लीनिंग</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">
+            <span class="en-content">Contact</span>
+            <span class="hi-content">संपर्क</span>
+          </h4>
+          <div class="footer__contact-item">
+            <span>📍</span>
+            <span>178/K Shaheed Ward, Seoni, MP</span>
+          </div>
+          <div class="footer__contact-item">
+            <span>📞</span>
+            <a href="tel:+919479474567">+91 9479474567</a>
+          </div>
+          <div class="footer__contact-item">
+            <span>✉️</span>
+            <a href="mailto:ovdeyewear@gmail.com">ovdeyewear@gmail.com</a>
+          </div>
+          <div class="footer__contact-item">
+            <span>🕐</span>
+            <span>Mon-Sun: 10AM - 8PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2026 OVD Eyewear. All rights reserved.</p>
+        <div class="footer__payments">
+          <span class="footer__payment">💳 Card</span>
+          <span class="footer__payment">💵 Cash</span>
+          <span class="footer__payment">📱 UPI</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Button -->
+  <a href="javascript:void(0)" onclick="openWhatsApp()" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+    💬
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
