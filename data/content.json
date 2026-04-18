@@ -1,0 +1,228 @@
+{
+  "site": {
+    "name": "OVD Eyewear",
+    "tagline": "Where Clarity meets fashion. A complete eyewear solution for everyone.",
+    "logo": "images/ovd-logo.png",
+    "whatsappPhone": "919479474567"
+  },
+  "about": {
+    "pageTitle": "About OVD Eyewear",
+    "pageSubtitle": "Where Clarity meets fashion. Learn our story and mission.",
+    "storyTitle": "Our Story",
+    "storyParagraph1": "At OVD Eyewear, we believe that eyewear is more than just vision correction. It is a statement of personality and confidence.",
+    "storyParagraph2": "Founded with a passion to deliver high-quality, stylish, and affordable eyewear, OVD Eyewear brings a blend of fashion and functionality.",
+    "storyImage": "images/aboutstory-section-1.jpeg",
+    "missionTitle": "Our Mission",
+    "missionText": "To give every customer clear vision with unmatched style and comfort.",
+    "experienceTitle": "The OVD Experience",
+    "experienceText": "At OVD Eyewear, you do not just wear glasses. You experience clarity, confidence, and class.",
+    "experienceImage": "images/aboutstory-section-2.jpeg",
+    "ownerName": "Vashishtha Shukla",
+    "ownerRole": "Founder, OVD Eyewear",
+    "ownerQuote": "Our vision at OVD Eyewear is to combine quality, style, and affordability.",
+    "ownerImage": "images/aboutstory-section-2.jpeg"
+  },
+  "contact": {
+    "address": "178/K Shaheed Ward, Seoni, Madhya Pradesh",
+    "phone": "+91 9479474567",
+    "email": "ovdeyewear@gmail.com",
+    "hours": "Monday - Sunday: 10:00 AM - 8:00 PM",
+    "instagramHandle": "@shuklachashmagharopticals",
+    "instagramUrl": "https://instagram.com/shuklachashmagharopticals",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.8!2d79.5!3d22.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDUxJzAwLjAiTiA3OcKwMzAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin"
+  },
+  "socialLinks": [
+    {
+      "id": "social-1",
+      "label": "Instagram",
+      "icon": "📷",
+      "url": "https://instagram.com/shuklachashmagharopticals"
+    },
+    {
+      "id": "social-2",
+      "label": "Facebook",
+      "icon": "📘",
+      "url": "#"
+    },
+    {
+      "id": "social-3",
+      "label": "WhatsApp",
+      "icon": "💬",
+      "url": "#"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-1",
+      "sku": "OVD-SUN-101",
+      "title": "AeroShield Polarized Sunglasses",
+      "category": "sunglasses premium",
+      "badge": "Best Seller",
+      "price": "Rs 2,499 - Rs 3,299",
+      "features": [
+        "UV400 + polarized TAC lens for glare-free driving",
+        "Matte TR90 frame, lightweight 24g fit",
+        "Scratch-resistant hard coat with mirror finish"
+      ],
+      "image": "images/shop-product-cards-main-catalog-1.jpeg",
+      "alt": "Detailed close-up of premium black sunglasses with reflective lenses",
+      "whatsappMessage": "Hi, I want to order AeroShield Polarized Sunglasses (OVD-SUN-101)."
+    },
+    {
+      "id": "prod-2",
+      "sku": "OVD-SUN-118",
+      "title": "SunMuse Gradient Aviators",
+      "category": "sunglasses",
+      "badge": "New",
+      "price": "Rs 1,899 - Rs 2,499",
+      "features": [
+        "Gradient lens tint for indoor-outdoor comfort",
+        "Stainless steel frame with nose pad adjusters",
+        "Available in smoke, tea, and blue fade shades"
+      ],
+      "image": "images/shop-product-cards-main-catalog-2.jpeg",
+      "alt": "Stylish brown gradient sunglasses with gold temple accents",
+      "whatsappMessage": "Hi, I want details for SunMuse Gradient Aviators (OVD-SUN-118)."
+    },
+    {
+      "id": "prod-3",
+      "sku": "OVD-OPT-203",
+      "title": "ClearEdge Acetate Frame",
+      "category": "optical",
+      "badge": "Top Rated",
+      "price": "Rs 2,199 - Rs 3,799",
+      "features": [
+        "Italian acetate front with flexible spring hinges",
+        "Medium-fit rectangular profile for daily wear",
+        "Compatible with single, bifocal, and progressive lenses"
+      ],
+      "image": "images/shop-product-cards-main-catalog-3.jpeg",
+      "alt": "Detailed photo of clear acetate optical frame on a white surface",
+      "whatsappMessage": "Hi, I want to check stock for ClearEdge Acetate Frame (OVD-OPT-203)."
+    },
+    {
+      "id": "prod-4",
+      "sku": "OVD-OPT-245",
+      "title": "TitanLite Air Titanium",
+      "category": "optical premium",
+      "badge": "Premium",
+      "price": "Rs 4,999 - Rs 7,499",
+      "features": [
+        "Ultra-light titanium memory frame, 14g only",
+        "Corrosion-resistant build for long durability",
+        "Ideal for high-power lenses with stable bridge support"
+      ],
+      "image": "images/shop-product-cards-main-catalog-4.jpeg",
+      "alt": "Premium titanium optical glasses with thin temples and soft reflections",
+      "whatsappMessage": "Hi, I am interested in TitanLite Air Titanium (OVD-OPT-245)."
+    },
+    {
+      "id": "prod-5",
+      "sku": "OVD-CMP-311",
+      "title": "ScreenGuard BlueCut Pro",
+      "category": "computer",
+      "badge": "Office Pick",
+      "price": "Rs 1,699 - Rs 2,899",
+      "features": [
+        "Blue-cut anti-glare coating for reduced eye fatigue",
+        "Hydrophobic and anti-smudge lens surface",
+        "Lightweight frame with long-hour comfort temples"
+      ],
+      "image": "images/shop-product-cards-main-catalog-5.jpeg",
+      "alt": "Computer glasses with anti-blue-light coating reflected under desk lighting",
+      "whatsappMessage": "Hi, I want ScreenGuard BlueCut Pro (OVD-CMP-311)."
+    },
+    {
+      "id": "prod-6",
+      "sku": "OVD-CMP-326",
+      "title": "NeoRound Desk Vision",
+      "category": "computer",
+      "badge": "Slim Fit",
+      "price": "Rs 1,899 - Rs 3,199",
+      "features": [
+        "Desk-distance optimized digital comfort lenses",
+        "Round profile with matte alloy front",
+        "Optional zero-power and prescription variants"
+      ],
+      "image": "images/shop-product-cards-main-catalog-6.jpeg",
+      "alt": "Minimal round-frame computer glasses with matte black design",
+      "whatsappMessage": "Hi, please share options for NeoRound Desk Vision (OVD-CMP-326)."
+    },
+    {
+      "id": "prod-7",
+      "sku": "OVD-OPT-279",
+      "title": "UrbanClassic Full Rim",
+      "category": "optical",
+      "badge": "Daily Wear",
+      "price": "Rs 1,499 - Rs 2,699",
+      "features": [
+        "Durable acetate body with reinforced temples",
+        "Unisex shape suited for medium to wide faces",
+        "Custom nose support and anti-slip temple tips"
+      ],
+      "image": "images/shop-product-cards-main-catalog-7.jpeg",
+      "alt": "Classic full-rim optical glasses with detailed hinge and temple design",
+      "whatsappMessage": "Hi, I want to order UrbanClassic Full Rim (OVD-OPT-279)."
+    },
+    {
+      "id": "prod-8",
+      "sku": "OVD-PRM-412",
+      "title": "LuxeAura Signature Edition",
+      "category": "premium sunglasses",
+      "badge": "Limited",
+      "price": "Rs 6,499 - Rs 9,999",
+      "features": [
+        "Premium plated finish with edge-polished detailing",
+        "Polarized lens with anti-reflective inner coating",
+        "Includes hard shell case and microfiber care kit"
+      ],
+      "image": "images/shop-product-cards-main-catalog-8.jpeg",
+      "alt": "Luxury oversized sunglasses in studio light with premium finish",
+      "whatsappMessage": "Hi, I want LuxeAura Signature Edition (OVD-PRM-412)."
+    }
+  ],
+  "services": [
+    {
+      "id": "svc-1",
+      "title": "Repairs",
+      "description": "Expert repair services for broken frames, scratched lenses, and worn-out parts.",
+      "image": "images/services-section-visuals-1.jpeg",
+      "alt": "Eyewear repair tools and frame adjustments"
+    },
+    {
+      "id": "svc-2",
+      "title": "Adjustments",
+      "description": "Perfect adjustments for a comfortable fit whether your glasses are loose or tight.",
+      "image": "images/services-section-visuals-2.jpeg",
+      "alt": "Optician adjusting eyewear on customer"
+    },
+    {
+      "id": "svc-3",
+      "title": "Free Ultrasonic Cleaning",
+      "description": "Complimentary ultrasonic cleaning to remove dirt, oil, and debris.",
+      "image": "images/services-section-visuals-3.jpeg",
+      "alt": "Ultrasonic cleaning of eyeglasses"
+    },
+    {
+      "id": "svc-4",
+      "title": "Custom Fitting",
+      "description": "Personalized fitting so your glasses sit perfectly on your face.",
+      "image": "images/services-section-visuals-4.jpeg",
+      "alt": "Custom fitting session with customer"
+    },
+    {
+      "id": "svc-5",
+      "title": "Tailor-Made Lenses",
+      "description": "Custom lens solutions crafted to your exact prescription.",
+      "image": "images/lens-technology-visuals-1.jpeg",
+      "alt": "Lens technology visuals"
+    },
+    {
+      "id": "svc-6",
+      "title": "Tinted Lenses",
+      "description": "Custom tinting in multiple shades for fashion and medical use.",
+      "image": "images/lens-technology-visuals-2.jpeg",
+      "alt": "Tinted lens options"
+    }
+  ]
+}

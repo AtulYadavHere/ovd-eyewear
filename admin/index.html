@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OVD CMS Admin</title>
+  <link rel="stylesheet" href="admin/admin.css">
+</head>
+<body>
+  <header class="admin-header">
+    <div>
+      <h1>OVD Eyewear CMS</h1>
+      <p id="admin-header-text">Login to manage services, products, about page, contact details, and social links.</p>
+    </div>
+    <button id="logout-btn" class="btn-secondary hidden" type="button">Logout</button>
+  </header>
+
+  <main id="login-view" class="auth-view">
+    <section class="auth-card">
+      <h2>Admin Login</h2>
+      <p>Use your admin username and password to continue.</p>
+      <form id="login-form" class="admin-form">
+        <label>Username
+          <input type="text" name="username" autocomplete="username" required>
+        </label>
+        <label>Password
+          <input type="password" name="password" autocomplete="current-password" required>
+        </label>
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+      <p id="login-error" class="login-error hidden" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <main id="admin-shell" class="admin-layout hidden">
+    <nav class="admin-nav" aria-label="Admin sections">
+      <button class="tab-btn tab-btn--active" data-tab="site">Site</button>
+      <button class="tab-btn" data-tab="products">Products</button>
+      <button class="tab-btn" data-tab="services">Services</button>
+      <button class="tab-btn" data-tab="about">About Page</button>
+      <button class="tab-btn" data-tab="contact">Contact Page</button>
+      <button class="tab-btn" data-tab="social">Social Links</button>
+    </nav>
+
+    <section class="admin-content">
+      <div id="toast" class="toast" aria-live="polite"></div>
+
+      <section class="tab-panel tab-panel--active" id="tab-site">
+        <h2>Site Settings</h2>
+        <form id="site-form" class="admin-form">
+          <label>Brand Name
+            <input type="text" name="name" required>
+          </label>
+          <label>Tagline
+            <textarea name="tagline" rows="2" required></textarea>
+          </label>
+          <label>Home FAQ Heading
+            <input type="text" name="homeFaqTitle" placeholder="Eyewear, Lenses, and Optical Support in Seoni">
+          </label>
+          <label>Logo URL
+            <input type="text" name="logo" placeholder="images/ovd-logo.png">
+          </label>
+          <label>WhatsApp Phone (digits only)
+            <input type="text" name="whatsappPhone" required>
+          </label>
+          <button type="submit" class="btn-primary">Save Site Settings</button>
+        </form>
+      </section>
+
+      <section class="tab-panel" id="tab-products">
+        <h2>Products</h2>
+        <form id="product-form" class="admin-form grid-2">
+          <input type="hidden" name="id">
+          <label>SKU
+            <input type="text" name="sku" required>
+          </label>
+          <label>Title
+            <input type="text" name="title" required>
+          </label>
+          <label>Category (example: sunglasses premium)
+            <input type="text" name="category" required>
+          </label>
+          <label>Badge
+            <input type="text" name="badge" required>
+          </label>
+          <label>Price Range
+            <input type="text" name="price" required>
+          </label>
+          <label>Image URL
+            <input type="text" name="image" required>
+          </label>
+          <label>Image Upload
+            <input type="file" id="product-image-upload" accept="image/*">
+          </label>
+          <label>Image Alt Text
+            <input type="text" name="alt" required>
+          </label>
+          <label>WhatsApp Message
+            <input type="text" name="whatsappMessage" required>
+          </label>
+          <label class="full-width">Features (one per line)
+            <textarea name="features" rows="4" required></textarea>
+          </label>
+          <div class="actions full-width">
+            <button type="submit" class="btn-primary">Save Product</button>
+            <button type="button" id="product-reset" class="btn-secondary">Clear</button>
+          </div>
+        </form>
+        <div id="products-list" class="item-list"></div>
+      </section>
+
+      <section class="tab-panel" id="tab-services">
+        <h2>Services</h2>
+        <form id="service-form" class="admin-form grid-2">
+          <input type="hidden" name="id">
+          <label>Title
+            <input type="text" name="title" required>
+          </label>
+          <label>Image URL
+            <input type="text" name="image" required>
+          </label>
+          <label>Image Upload
+            <input type="file" id="service-image-upload" accept="image/*">
+          </label>
+          <label>Image Alt Text
+            <input type="text" name="alt" required>
+          </label>
+          <label class="full-width">Description
+            <textarea name="description" rows="3" required></textarea>
+          </label>
+          <div class="actions full-width">
+            <button type="submit" class="btn-primary">Save Service</button>
+            <button type="button" id="service-reset" class="btn-secondary">Clear</button>
+          </div>
+        </form>
+        <div id="services-list" class="item-list"></div>
+      </section>
+
+      <section class="tab-panel" id="tab-about">
+        <h2>About Page Content</h2>
+        <form id="about-form" class="admin-form">
+          <label>Page Title
+            <input type="text" name="pageTitle" required>
+          </label>
+          <label>Page Subtitle
+            <input type="text" name="pageSubtitle" required>
+          </label>
+          <label>Story Title
+            <input type="text" name="storyTitle" required>
+          </label>
+          <label>Story Paragraph 1
+            <textarea name="storyParagraph1" rows="3" required></textarea>
+          </label>
+          <label>Story Paragraph 2
+            <textarea name="storyParagraph2" rows="3" required></textarea>
+          </label>
+          <label>Story Image URL
+            <input type="text" name="storyImage" required>
+          </label>
+          <label>Mission Title
+            <input type="text" name="missionTitle" required>
+          </label>
+          <label>Mission Text
+            <textarea name="missionText" rows="2" required></textarea>
+          </label>
+          <label>Experience Title
+            <input type="text" name="experienceTitle" required>
+          </label>
+          <label>Experience Text
+            <textarea name="experienceText" rows="2" required></textarea>
+          </label>
+          <label>Experience Image URL
+            <input type="text" name="experienceImage" required>
+          </label>
+          <label>Owner Name
+            <input type="text" name="ownerName" required>
+          </label>
+          <label>Owner Role
+            <input type="text" name="ownerRole" required>
+          </label>
+          <label>Owner Quote
+            <textarea name="ownerQuote" rows="2" required></textarea>
+          </label>
+          <label>Owner Image URL
+            <input type="text" name="ownerImage" required>
+          </label>
+          <button type="submit" class="btn-primary">Save About Content</button>
+        </form>
+      </section>
+
+      <section class="tab-panel" id="tab-contact">
+        <h2>Contact Page Content</h2>
+        <form id="contact-form" class="admin-form">
+          <label>Address
+            <input type="text" name="address" required>
+          </label>
+          <label>Phone
+            <input type="text" name="phone" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" required>
+          </label>
+          <label>Business Hours
+            <input type="text" name="hours" required>
+          </label>
+          <label>Instagram Handle
+            <input type="text" name="instagramHandle" required>
+          </label>
+          <label>Instagram URL
+            <input type="text" name="instagramUrl" required>
+          </label>
+          <label>Map Embed URL
+            <textarea name="mapEmbedUrl" rows="2" required></textarea>
+          </label>
+          <button type="submit" class="btn-primary">Save Contact Content</button>
+        </form>
+      </section>
+
+      <section class="tab-panel" id="tab-social">
+        <h2>Social Links</h2>
+        <form id="social-form" class="admin-form grid-2">
+          <input type="hidden" name="id">
+          <label>Label
+            <input type="text" name="label" required>
+          </label>
+          <label>Icon (emoji or text)
+            <input type="text" name="icon" required>
+          </label>
+          <label class="full-width">URL
+            <input type="text" name="url" required>
+          </label>
+          <div class="actions full-width">
+            <button type="submit" class="btn-primary">Save Social Link</button>
+            <button type="button" id="social-reset" class="btn-secondary">Clear</button>
+          </div>
+        </form>
+        <div id="social-list" class="item-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="admin/admin.js"></script>
+</body>
+</html>

@@ -1,20 +1,27 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OVD Eyewear - Where Clarity meets fashion. Premium quality frames, latest designs, and accurate eye care solutions in Seoni, Madhya Pradesh.">
-  <meta name="keywords" content="eyewear, spectacles, sunglasses, optical, eye care, Seoni, Madhya Pradesh">
+  <meta name="description" content="Best eyewear and optical shop in Seoni, MP. Buy premium sunglasses, optical frames, computer glasses, and lenses with expert fitting, repairs, and eye care support.">
+  <meta name="keywords" content="eyewear shop in Seoni, optical shop near me, prescription glasses Seoni, sunglasses shop, computer glasses, blue light glasses, premium optical frames, chashma shop Seoni">
   <meta name="author" content="OVD Eyewear">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+  <meta name="googlebot" content="index,follow">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="OVD Eyewear - Where Clarity meets fashion">
-  <meta property="og:description" content="Premium quality frames, latest designs, and accurate eye care solutions.">
+  <meta property="og:title" content="OVD Eyewear | Best Optical Shop in Seoni, MP">
+  <meta property="og:description" content="Premium sunglasses, optical frames, computer glasses, and lens services with expert fitting at OVD Eyewear.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_IN">
+  <meta property="og:image" content="images/hero-product-close-up-1.jpeg">
 
-  <title>OVD Eyewear - Where Clarity meets fashion</title>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OVD Eyewear | Optical Store in Seoni">
+  <meta name="twitter:description" content="Shop stylish eyewear, prescription glasses, and lens services in Seoni.">
+  <meta name="twitter:image" content="images/hero-product-close-up-1.jpeg">
+
+  <title>OVD Eyewear | Eyewear & Optical Shop in Seoni, Madhya Pradesh</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%230093D9'/><circle cx='50' cy='50' r='20' fill='white'/></svg>">
@@ -24,17 +31,78 @@
 
   <!-- Font for Hindi -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Optician",
+      "name": "OVD Eyewear",
+      "image": "images/ovd-logo.png",
+      "telephone": "+91-9479474567",
+      "email": "ovdeyewear@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "178/K Shaheed Ward",
+        "addressLocality": "Seoni",
+        "addressRegion": "Madhya Pradesh",
+        "postalCode": "480661",
+        "addressCountry": "IN"
+      },
+      "areaServed": ["Seoni", "Madhya Pradesh"],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "10:00",
+          "closes": "20:00"
+        }
+      ],
+      "sameAs": [
+        "https://instagram.com/shuklachashmagharopticals"
+      ]
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you provide eye checkup support and prescription glasses in Seoni?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. OVD Eyewear helps customers with frame selection, lens options, and prescription-based eyewear support in Seoni."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you have computer glasses and blue light protection lenses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We offer computer glasses with blue light cut, anti-glare, and comfort-focused lens options for daily screen use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I order sunglasses and optical frames on WhatsApp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can contact OVD Eyewear on WhatsApp for product details, availability, and quick booking support."
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
   <!-- Navigation -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container nav__inner">
       <a href="index.html" class="nav__logo" aria-label="OVD Eyewear Home">
-        <div class="nav__logo-icon">OVD</div>
-        <div class="nav__logo-text">
-          <span>OVD</span>
-          <span>EYEWEAR</span>
-        </div>
+        <img src="images/ovd-logo.png" alt="OVD Eyewear logo" class="nav__logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <span class="nav__logo-fallback" style="display: none;">OVD EYEWEAR</span>
       </a>
 
       <div class="nav__menu">
@@ -73,8 +141,15 @@
     </div>
   </nav>
 
+  <!-- Product Runway Banner -->
+  <section class="product-runway" aria-label="Featured products">
+    <div class="product-runway__mask">
+      <div class="product-runway__track" id="home-product-runway"></div>
+    </div>
+  </section>
+
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero hero--with-runway">
     <div class="container hero__inner">
       <div class="hero__content fade-in">
         <div class="hero__badge">
@@ -103,9 +178,7 @@
 
       <div class="hero__visual fade-in">
         <div class="hero__glasses">
-          <div class="hero__glasses-inner">
-            <span class="hero__glasses-icon">👓</span>
-          </div>
+          <div class="hero__glasses-inner" style="background-image: linear-gradient(135deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.02) 100%), url('images/hero-product-close-up-1.jpeg'); background-size: cover; background-position: center;"></div>
         </div>
         <div class="hero__floating hero__floating--1">
           <span class="en-content">Premium Quality</span>
@@ -120,11 +193,22 @@
   </section>
 
   <!-- Features Section -->
-  <section class="section">
+  <section class="section section--features-premium">
     <div class="container">
+      <div class="section-header section-header--features fade-in">
+        <span class="section-header__tagline">
+          <span class="en-content">Why OVD Eyewear</span>
+          <span class="hi-content">OVD आईवियर क्यों</span>
+        </span>
+        <h2 class="section-header__title">
+          <span class="en-content">Crafted Quality, Trusted Service, Modern Style</span>
+          <span class="hi-content">उत्तम गुणवत्ता, भरोसेमंद सेवा, आधुनिक स्टाइल</span>
+        </h2>
+      </div>
+
       <div class="features">
         <div class="feature-card fade-in">
-          <div class="feature-card__icon">👁️</div>
+          <div class="feature-card__icon" style="background-image: linear-gradient(135deg, rgba(0, 147, 217, 0.12) 0%, rgba(234, 69, 123, 0.12) 100%), url('images/background-textureshape-assets-1.jpeg'); background-size: cover; background-position: center;"></div>
           <h3 class="feature-card__title">
             <span class="en-content">Premium Frames</span>
             <span class="hi-content">प्रीमियम फ्रेम</span>
@@ -136,7 +220,11 @@
         </div>
 
         <div class="feature-card fade-in">
-          <div class="feature-card__icon">🔷</div>
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M4.5 8.5a3 3 0 0 1 3-3h2.5v2H7.5a1 1 0 0 0-1 1v2.75a1 1 0 0 0 1 1H10V14H7.5a3 3 0 0 1-3-3V8.5Zm15 0V11a3 3 0 0 1-3 3H14v-2h2.5a1 1 0 0 0 1-1V8.5a1 1 0 0 0-1-1H14v-2h2.5a3 3 0 0 1 3 3ZM8.75 12.75h6.5v-1.5h-6.5v1.5Z" fill="currentColor"/>
+            </svg>
+          </div>
           <h3 class="feature-card__title">
             <span class="en-content">Advanced Lenses</span>
             <span class="hi-content">एडवांस लेंस</span>
@@ -148,7 +236,11 @@
         </div>
 
         <div class="feature-card fade-in">
-          <div class="feature-card__icon">🛠️</div>
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M21.21 7.1a5.5 5.5 0 0 1-7.24 6.93l-6.9 6.9a1.5 1.5 0 1 1-2.12-2.12l6.9-6.9a5.5 5.5 0 0 1 6.93-7.24l-3.24 3.24 1.76 1.76 3.91-2.57Z" fill="currentColor"/>
+            </svg>
+          </div>
           <h3 class="feature-card__title">
             <span class="en-content">Expert Services</span>
             <span class="hi-content">विशेषज्ञ सेवाएं</span>
@@ -160,7 +252,11 @@
         </div>
 
         <div class="feature-card fade-in">
-          <div class="feature-card__icon">💳</div>
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M3.5 6A2.5 2.5 0 0 1 6 3.5h12A2.5 2.5 0 0 1 20.5 6v12A2.5 2.5 0 0 1 18 20.5H6A2.5 2.5 0 0 1 3.5 18V6Zm2 2v2h13V8h-13Zm0 5v5h13v-5h-13Zm2.5 1.75h3v1.5h-3v-1.5Z" fill="currentColor"/>
+            </svg>
+          </div>
           <h3 class="feature-card__title">
             <span class="en-content">Easy Payment</span>
             <span class="hi-content">आसान पेमेंट</span>
@@ -194,7 +290,7 @@
 
       <div class="products-grid">
         <div class="product-card fade-in">
-          <div class="product-card__image">🕶️</div>
+          <div class="product-card__image" style="background-image: linear-gradient(135deg, rgba(0, 147, 217, 0.12) 0%, rgba(234, 69, 123, 0.12) 100%), url('images/category-card-sunglasses-1.jpeg'); background-size: cover; background-position: center;"></div>
           <div class="product-card__content">
             <h3 class="product-card__title">
               <span class="en-content">Sunglasses</span>
@@ -213,7 +309,7 @@
         </div>
 
         <div class="product-card fade-in">
-          <div class="product-card__image">👓</div>
+          <div class="product-card__image" style="background-image: linear-gradient(135deg, rgba(0, 147, 217, 0.12) 0%, rgba(234, 69, 123, 0.12) 100%), url('images/category-card-optical-frames-1.jpeg'); background-size: cover; background-position: center;"></div>
           <div class="product-card__content">
             <h3 class="product-card__title">
               <span class="en-content">Optical Frames</span>
@@ -232,7 +328,7 @@
         </div>
 
         <div class="product-card fade-in">
-          <div class="product-card__image">💻</div>
+          <div class="product-card__image" style="background-image: linear-gradient(135deg, rgba(0, 147, 217, 0.12) 0%, rgba(234, 69, 123, 0.12) 100%), url('images/category-card-computer-glasses-1.jpeg'); background-size: cover; background-position: center;"></div>
           <div class="product-card__content">
             <h3 class="product-card__title">
               <span class="en-content">Computer Glasses</span>
@@ -279,7 +375,7 @@
 
       <div class="services-grid">
         <div class="service-card fade-in">
-          <div class="service-card__icon">🔧</div>
+          <div class="service-card__icon" style="background-image: linear-gradient(135deg, rgba(0, 147, 217, 0.12) 0%, rgba(234, 69, 123, 0.12) 100%), url('images/services-section-visuals-1.jpeg'); background-size: cover; background-position: center;"></div>
           <h3 class="service-card__title">
             <span class="en-content">Repairs & Adjustments</span>
             <span class="hi-content">मरम्मत और एडजस्टमेंट</span>
@@ -291,7 +387,7 @@
         </div>
 
         <div class="service-card fade-in">
-          <div class="service-card__icon">✨</div>
+          <div class="service-card__icon" style="background-image: linear-gradient(135deg, rgba(0, 147, 217, 0.12) 0%, rgba(234, 69, 123, 0.12) 100%), url('images/services-section-visuals-2.jpeg'); background-size: cover; background-position: center;"></div>
           <h3 class="service-card__title">
             <span class="en-content">Free Ultrasonic Cleaning</span>
             <span class="hi-content">फ्री अल्ट्रासोनिक क्लीनिंग</span>
@@ -303,7 +399,7 @@
         </div>
 
         <div class="service-card fade-in">
-          <div class="service-card__icon">📐</div>
+          <div class="service-card__icon" style="background-image: linear-gradient(135deg, rgba(0, 147, 217, 0.12) 0%, rgba(234, 69, 123, 0.12) 100%), url('images/services-section-visuals-3.jpeg'); background-size: cover; background-position: center;"></div>
           <h3 class="service-card__title">
             <span class="en-content">Custom Fitting</span>
             <span class="hi-content">कस्टम फिटिंग</span>
@@ -315,7 +411,7 @@
         </div>
 
         <div class="service-card fade-in">
-          <div class="service-card__icon">🎨</div>
+          <div class="service-card__icon" style="background-image: linear-gradient(135deg, rgba(0, 147, 217, 0.12) 0%, rgba(234, 69, 123, 0.12) 100%), url('images/services-section-visuals-4.jpeg'); background-size: cover; background-position: center;"></div>
           <h3 class="service-card__title">
             <span class="en-content">Tailor-Made Lenses</span>
             <span class="hi-content">टेलर-मेड लेंस</span>
@@ -327,7 +423,7 @@
         </div>
 
         <div class="service-card fade-in">
-          <div class="service-card__icon">🌈</div>
+          <div class="service-card__icon" style="background-image: linear-gradient(135deg, rgba(0, 147, 217, 0.12) 0%, rgba(234, 69, 123, 0.12) 100%), url('images/lens-technology-visuals-3.jpeg'); background-size: cover; background-position: center;"></div>
           <h3 class="service-card__title">
             <span class="en-content">Tinted Lenses</span>
             <span class="hi-content">टिंटेड लेंस</span>
@@ -400,14 +496,44 @@
     </div>
   </section>
 
+  <!-- SEO FAQ Section -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-header__tagline">Popular Questions</span>
+        <h2 class="section-header__title">Eyewear, Lenses, and Optical Support in Seoni</h2>
+        <p class="section-header__text">Quick answers to common customer queries that help you choose the right eyewear and lens service faster.</p>
+      </div>
+
+      <div class="faq-list fade-in">
+        <details class="faq-item" open>
+          <summary>Which is the best optical shop in Seoni for premium frames and lenses?</summary>
+          <p>OVD Eyewear offers premium optical frames, sunglasses, computer glasses, and personalized lens support in Seoni, Madhya Pradesh.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you provide blue light glasses and anti-glare computer lenses?</summary>
+          <p>Yes, we provide computer eyewear with blue light cut, anti-glare coatings, and comfortable frames for long screen hours.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I get frame fitting, adjustments, and repair services?</summary>
+          <p>Yes, we provide frame fitting, temple adjustments, minor repairs, and regular cleaning support to keep your glasses in top condition.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How can I order or book through WhatsApp?</summary>
+          <p>Use the WhatsApp button on this site to share your requirement. Our team will help with product options, pricing, and booking quickly.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
           <div class="footer__logo">
-            <div class="footer__logo-icon">OVD</div>
-            <span class="footer__logo-text">EYEWEAR</span>
+            <img src="images/ovd-logo.png" alt="OVD Eyewear logo" class="footer__logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="footer__logo-fallback" style="display: none;">OVD EYEWEAR</span>
           </div>
           <p class="footer__tagline">Where Clarity meets fashion. A complete eyewear solution for everyone.</p>
           <div class="footer__social">
@@ -418,7 +544,7 @@
               📘
             </a>
             <a href="#" class="footer__social-link" aria-label="WhatsApp" target="_blank" rel="noopener">
-              💬
+              <svg class="icon--whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.57 0 .28 5.29.28 11.8c0 2.08.55 4.13 1.59 5.94L0 24l6.46-1.69a11.77 11.77 0 0 0 5.62 1.43h.01c6.5 0 11.79-5.29 11.79-11.8 0-3.15-1.23-6.12-3.36-8.46zM12.09 21.72h-.01a9.78 9.78 0 0 1-4.98-1.36l-.36-.21-3.83 1 1.02-3.74-.23-.39a9.78 9.78 0 0 1-1.5-5.21c0-5.41 4.4-9.81 9.81-9.81 2.62 0 5.08 1.02 6.93 2.88a9.74 9.74 0 0 1 2.87 6.93c0 5.41-4.4 9.81-9.81 9.81zm5.39-7.36c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.66.15-.2.29-.76.95-.94 1.14-.17.2-.35.22-.64.08-.29-.15-1.24-.46-2.35-1.47a8.89 8.89 0 0 1-1.63-2.03c-.17-.29-.02-.45.13-.6.14-.14.29-.35.43-.52.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.51h-.56c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.09 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.72-.7 1.96-1.37.24-.66.24-1.23.17-1.35-.07-.12-.27-.2-.56-.35z"/></svg>
             </a>
           </div>
         </div>
@@ -510,10 +636,13 @@
 
   <!-- WhatsApp Button -->
   <a href="javascript:void(0)" onclick="openWhatsApp()" class="whatsapp-btn" aria-label="Chat on WhatsApp">
-    💬
+    <svg class="icon--whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.57 0 .28 5.29.28 11.8c0 2.08.55 4.13 1.59 5.94L0 24l6.46-1.69a11.77 11.77 0 0 0 5.62 1.43h.01c6.5 0 11.79-5.29 11.79-11.8 0-3.15-1.23-6.12-3.36-8.46zM12.09 21.72h-.01a9.78 9.78 0 0 1-4.98-1.36l-.36-.21-3.83 1 1.02-3.74-.23-.39a9.78 9.78 0 0 1-1.5-5.21c0-5.41 4.4-9.81 9.81-9.81 2.62 0 5.08 1.02 6.93 2.88a9.74 9.74 0 0 1 2.87 6.93c0 5.41-4.4 9.81-9.81 9.81zm5.39-7.36c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.66.15-.2.29-.76.95-.94 1.14-.17.2-.35.22-.64.08-.29-.15-1.24-.46-2.35-1.47a8.89 8.89 0 0 1-1.63-2.03c-.17-.29-.02-.45.13-.6.14-.14.29-.35.43-.52.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.51h-.56c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.09 4.48.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.72-.7 1.96-1.37.24-.66.24-1.23.17-1.35-.07-.12-.27-.2-.56-.35z"/></svg>
   </a>
 
   <!-- Scripts -->
+  <script src="js/cms.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
+
+
