@@ -5,6 +5,18 @@
     "logo": "images/ovd-logo.png",
     "whatsappPhone": "919479474567"
   },
+  "appointments": [
+    {
+      "id": "appt-1776768649094-k4orqe",
+      "name": "Test User",
+      "phone": "9876543210",
+      "email": "test@example.com",
+      "service": "eye-test",
+      "date": "2026-04-22",
+      "message": "Need urgent check",
+      "createdAt": "2026-04-21T10:50:49.094Z"
+    }
+  ],
   "about": {
     "pageTitle": "About OVD Eyewear",
     "pageSubtitle": "Where Clarity meets fashion. Learn our story and mission.",

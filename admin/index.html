@@ -36,6 +36,7 @@
   <main id="admin-shell" class="admin-layout hidden">
     <nav class="admin-nav" aria-label="Admin sections">
       <button class="tab-btn tab-btn--active" data-tab="site">Site</button>
+      <button class="tab-btn" data-tab="appointments">Appointments</button>
       <button class="tab-btn" data-tab="products">Products</button>
       <button class="tab-btn" data-tab="services">Services</button>
       <button class="tab-btn" data-tab="about">About Page</button>
@@ -66,6 +67,12 @@
           </label>
           <button type="submit" class="btn-primary">Save Site Settings</button>
         </form>
+      </section>
+
+      <section class="tab-panel" id="tab-appointments">
+        <h2>Appointment Requests</h2>
+        <p class="item-card__meta">Customer submissions from the Contact page form appear here.</p>
+        <div id="appointments-list" class="item-list"></div>
       </section>
 
       <section class="tab-panel" id="tab-products">

@@ -435,7 +435,7 @@ function initFormValidation() {
   const forms = document.querySelectorAll('form[data-validate]');
 
   forms.forEach(form => {
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
 
       let isValid = true;
@@ -467,8 +467,8 @@ function initFormValidation() {
 
         // Phone validation
         if (field.type === 'tel' && value) {
-          const phoneRegex = /^[0-9]{10}$/;
-          if (!phoneRegex.test(value.replace(/\s/g, ''))) {
+          const digits = value.replace(/\D/g, '');
+          if (digits.length < 10 || digits.length > 14) {
             isValid = false;
             showFieldError(field, 'Please enter a valid 10-digit phone number');
           }
@@ -476,26 +476,146 @@ function initFormValidation() {
       });
 
       if (isValid) {
-        // Simulate form submission
         const submitBtn = form.querySelector('button[type="submit"]');
+        if (!submitBtn) return;
+
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<span>Sending...</span>';
         submitBtn.disabled = true;
 
-        // Simulate API call
-        setTimeout(() => {
-          // Success feedback
-          form.innerHTML = `
-            <div style="text-align: center; padding: var(--space-xl);">
-              <div style="font-size: 4rem; margin-bottom: var(--space-md);">✅</div>
-              <h3 style="color: var(--primary-blue); margin-bottom: var(--space-md);">Thank You!</h3>
-              <p style="color: var(--text-secondary);">Your message has been sent successfully. We'll get back to you soon.</p>
-            </div>
-          `;
-        }, 1500);
+        try {
+          if (form.id === 'appointment-form') {
+            await submitAppointmentForm(form);
+          } else if (form.id === 'lens-quotation-form') {
+            await submitLensQuotationForm(form);
+          } else {
+            await simulateGenericFormSubmit(form);
+          }
+        } catch (error) {
+          showFormNotice(form, error.message || 'Failed to submit form. Please try again.', false);
+        } finally {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }
       }
     });
   });
+}
+
+async function submitAppointmentForm(form) {
+  const payload = {
+    name: String(form.name?.value || '').trim(),
+    phone: String(form.phone?.value || '').trim(),
+    email: String(form.email?.value || '').trim(),
+    service: String(form.service?.value || '').trim(),
+    date: String(form.date?.value || '').trim(),
+    message: String(form.message?.value || '').trim()
+  };
+
+  const response = await fetch('/api/public/appointments', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  });
+
+  if (!response.ok) {
+    const data = await response.json().catch(() => ({}));
+    throw new Error(data.message || 'Could not submit appointment.');
+  }
+
+  form.reset();
+  showFormNotice(form, 'Appointment request submitted successfully. We will contact you shortly.', true);
+}
+
+async function submitLensQuotationForm(form) {
+  const name = String(form.name?.value || '').trim();
+  const phone = String(form.phone?.value || '').trim();
+  const email = String(form.email?.value || '').trim();
+  const lensType = String(form.lensType?.value || '').trim();
+  const frameType = String(form.frameType?.value || '').trim();
+  const prescriptionPower = String(form.prescriptionPower?.value || '').trim();
+  const message = String(form.message?.value || '').trim();
+
+  let prescriptionUrl = '';
+  const fileInput = form.querySelector('input[name="prescriptionImage"]');
+  const file = fileInput?.files?.[0];
+
+  if (file) {
+    const uploadData = new FormData();
+    uploadData.append('prescription', file);
+
+    const uploadResponse = await fetch('/api/public/prescription-upload', {
+      method: 'POST',
+      body: uploadData
+    });
+
+    if (!uploadResponse.ok) {
+      const data = await uploadResponse.json().catch(() => ({}));
+      throw new Error(data.message || 'Prescription image upload failed.');
+    }
+
+    const uploadResult = await uploadResponse.json();
+    prescriptionUrl = uploadResult.url || '';
+  }
+
+  const lines = [
+    'Hi! I need a lens quotation.',
+    '',
+    `Name: ${name}`,
+    `Phone: ${phone}`,
+    `Email: ${email || 'Not provided'}`,
+    `Lens Type: ${lensType || 'Not specified'}`,
+    `Frame Type: ${frameType || 'Not specified'}`,
+    `Prescription Details: ${prescriptionPower || 'Not provided'}`,
+    `Additional Notes: ${message || 'None'}`
+  ];
+
+  if (prescriptionUrl) {
+    lines.push(`Prescription Image: ${prescriptionUrl}`);
+  } else {
+    lines.push('Prescription Image: Please attach manually in WhatsApp chat.');
+  }
+
+  const shopPhone = normalizePhoneValue(window.__ovdPhone || window.__ovdCms?.site?.whatsappPhone || '919479474567');
+  const whatsappUrl = `https://wa.me/${shopPhone}?text=${encodeURIComponent(lines.join('\n'))}`;
+  window.open(whatsappUrl, '_blank', 'noopener');
+
+  form.reset();
+  showFormNotice(form, 'WhatsApp chat opened. Your quotation request is ready to send.', true);
+}
+
+async function simulateGenericFormSubmit(form) {
+  await new Promise((resolve) => setTimeout(resolve, 600));
+  form.reset();
+  showFormNotice(form, 'Your message has been sent successfully.', true);
+}
+
+function showFormNotice(form, message, ok) {
+  const existing = form.querySelector('.form-notice');
+  if (existing) existing.remove();
+
+  const notice = document.createElement('div');
+  notice.className = 'form-notice';
+  notice.style.marginTop = '12px';
+  notice.style.padding = '10px 12px';
+  notice.style.borderRadius = '10px';
+  notice.style.fontWeight = '600';
+  notice.style.fontSize = '0.95rem';
+
+  if (ok) {
+    notice.style.background = 'rgba(16, 185, 129, 0.12)';
+    notice.style.border = '1px solid rgba(16, 185, 129, 0.35)';
+    notice.style.color = '#5ee8b0';
+  } else {
+    notice.style.background = 'rgba(239, 68, 68, 0.12)';
+    notice.style.border = '1px solid rgba(239, 68, 68, 0.35)';
+    notice.style.color = '#ffb4b4';
+  }
+
+  notice.textContent = message;
+  form.appendChild(notice);
 }
 
 function showFieldError(field, message) {
@@ -633,10 +753,15 @@ function slugify(value) {
    WhatsApp Integration
    ======================================== */
 function openWhatsApp(message = '') {
-  const phone = window.__ovdPhone || '919479474567'; // Format: country code + number (no spaces or dashes)
+  const phone = normalizePhoneValue(window.__ovdPhone || '919479474567');
   const defaultMessage = message || 'Hi! I would like to book an appointment at OVD Eyewear.';
   const encodedMessage = encodeURIComponent(defaultMessage);
   window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+}
+
+function normalizePhoneValue(value) {
+  const cleaned = String(value || '').replace(/\D+/g, '');
+  return cleaned || '919479474567';
 }
 
 // Make WhatsApp function globally available

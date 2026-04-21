@@ -35,8 +35,8 @@ function setAuthState(authenticated) {
 
   const headerText = byId('admin-header-text');
   headerText.textContent = authenticated
-    ? 'Edit services, products, about page, contact details, and social links.'
-    : 'Login to manage services, products, about page, contact details, and social links.';
+    ? 'Edit appointments, services, products, about page, contact details, and social links.'
+    : 'Login to manage appointments, services, products, about page, contact details, and social links.';
 
   const loginError = byId('login-error');
   loginError.classList.add('hidden');
@@ -121,6 +121,7 @@ async function loadContent() {
     fillSiteForm();
     fillAboutForm();
     fillContactForm();
+    renderAppointments();
     renderProducts();
     renderServices();
     renderSocialLinks();
@@ -133,6 +134,7 @@ function fillSiteForm() {
   const form = byId('site-form');
   form.name.value = cmsData.site.name || '';
   form.tagline.value = cmsData.site.tagline || '';
+  form.homeFaqTitle.value = cmsData.site.homeFaqTitle || '';
   form.logo.value = cmsData.site.logo || '';
   form.whatsappPhone.value = cmsData.site.whatsappPhone || '';
 }
@@ -182,6 +184,47 @@ function renderProducts() {
       </div>
       <div class="item-card__meta">${(item.features || []).join(' | ')}</div>
     `;
+    host.appendChild(card);
+  });
+}
+
+function renderAppointments() {
+  const host = byId('appointments-list');
+  if (!host) return;
+
+  host.innerHTML = '';
+  const items = Array.isArray(cmsData.appointments) ? cmsData.appointments : [];
+
+  if (items.length === 0) {
+    host.innerHTML = '<article class="item-card"><div class="item-card__meta">No appointment requests yet.</div></article>';
+    return;
+  }
+
+  items.forEach((item) => {
+    const card = document.createElement('article');
+    card.className = 'item-card';
+
+    const createdAt = item.createdAt ? new Date(item.createdAt).toLocaleString() : 'Unknown time';
+    const service = item.service || 'Not specified';
+    const preferredDate = item.date || 'Not specified';
+    const email = item.email || 'Not provided';
+    const message = item.message || 'No additional details';
+
+    card.innerHTML = `
+      <div class="item-card__top">
+        <div>
+          <strong>${item.name || 'Unnamed Customer'}</strong>
+          <div class="item-card__meta">${item.phone || 'No phone'} | ${email}</div>
+        </div>
+        <div class="item-card__actions">
+          <button class="delete-btn" data-id="${item.id}" data-type="appointment">Delete</button>
+        </div>
+      </div>
+      <div class="item-card__meta">Service: ${service} | Preferred Date: ${preferredDate}</div>
+      <div>${message}</div>
+      <div class="item-card__meta">Received: ${createdAt}</div>
+    `;
+
     host.appendChild(card);
   });
 }
@@ -242,6 +285,7 @@ function setupForms() {
     const payload = {
       name: form.name.value.trim(),
       tagline: form.tagline.value.trim(),
+      homeFaqTitle: form.homeFaqTitle.value.trim(),
       logo: form.logo.value.trim(),
       whatsappPhone: form.whatsappPhone.value.trim()
     };
@@ -488,6 +532,11 @@ async function deleteItem(type, id) {
     if (type === 'social') {
       await api(`/api/admin/social-links/${id}`, { method: 'DELETE' });
       showToast('Social link deleted.');
+    }
+
+    if (type === 'appointment') {
+      await api(`/api/admin/appointments/${id}`, { method: 'DELETE' });
+      showToast('Appointment deleted.');
     }
 
     await loadContent();

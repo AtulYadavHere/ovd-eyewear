@@ -177,7 +177,7 @@
             <span class="hi-content">अपॉइंटमेंट बुक करें</span>
           </h2>
 
-          <form data-validate action="#" method="POST">
+          <form id="appointment-form" data-validate action="#" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label for="name" class="form-label">
@@ -257,6 +257,98 @@
             <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">
               <span class="en-content">Book Appointment</span>
               <span class="hi-content">अपॉइंटमेंट बुक करें</span>
+            </button>
+          </form>
+
+          <hr style="margin: 2rem 0; border: 0; border-top: 1px solid rgba(255,255,255,0.15);">
+
+          <h3 class="contact-form__title" style="font-size: 1.5rem; margin-bottom: 1rem;">
+            <span class="en-content">Get Lens Quotation</span>
+            <span class="hi-content">लेंस कोटेशन पाएं</span>
+          </h3>
+          <p style="margin: 0 0 1rem; color: var(--text-secondary);">
+            <span class="en-content">Share your prescription details and we will continue directly on WhatsApp.</span>
+            <span class="hi-content">अपना प्रिस्क्रिप्शन विवरण साझा करें, आगे की बातचीत सीधे व्हाट्सएप पर होगी।</span>
+          </p>
+
+          <form id="lens-quotation-form" data-validate action="#" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="lensName" class="form-label">
+                  <span class="en-content">Full Name *</span>
+                  <span class="hi-content">पूरा नाम *</span>
+                </label>
+                <input type="text" id="lensName" name="name" class="form-input" placeholder="Enter your name" required>
+              </div>
+              <div class="form-group">
+                <label for="lensPhone" class="form-label">
+                  <span class="en-content">Phone Number *</span>
+                  <span class="hi-content">फोन नंबर *</span>
+                </label>
+                <input type="tel" id="lensPhone" name="phone" class="form-input" placeholder="Enter your phone" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="lensEmail" class="form-label">Email</label>
+              <input type="email" id="lensEmail" name="email" class="form-input" placeholder="Enter your email">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="lensType" class="form-label">
+                  <span class="en-content">Lens Type</span>
+                  <span class="hi-content">लेंस प्रकार</span>
+                </label>
+                <select id="lensType" name="lensType" class="form-select">
+                  <option value="Single Vision">Single Vision</option>
+                  <option value="Bifocal">Bifocal</option>
+                  <option value="Progressive">Progressive</option>
+                  <option value="Blue Cut">Blue Cut</option>
+                  <option value="Photochromic">Photochromic</option>
+                  <option value="Anti Glare">Anti Glare</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="frameType" class="form-label">
+                  <span class="en-content">Frame Type</span>
+                  <span class="hi-content">फ्रेम प्रकार</span>
+                </label>
+                <input type="text" id="frameType" name="frameType" class="form-input" placeholder="Example: Full Rim / Rimless">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="prescriptionPower" class="form-label">
+                <span class="en-content">Prescription Power Details</span>
+                <span class="hi-content">प्रिस्क्रिप्शन पावर विवरण</span>
+              </label>
+              <textarea id="prescriptionPower" name="prescriptionPower" class="form-textarea" placeholder="Example: RE -1.25, LE -1.00 Cyl -0.50"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="prescriptionImage" class="form-label">
+                <span class="en-content">Upload Prescription Image</span>
+                <span class="hi-content">प्रिस्क्रिप्शन इमेज अपलोड करें</span>
+              </label>
+              <input type="file" id="prescriptionImage" name="prescriptionImage" class="form-input" accept="image/*">
+              <small style="display: block; margin-top: 0.4rem; color: var(--text-secondary);">
+                <span class="en-content">Image link will be included in WhatsApp message. You can also attach image manually in chat.</span>
+                <span class="hi-content">इमेज लिंक व्हाट्सएप मैसेज में शामिल होगा। आप चैट में इमेज मैन्युअली भी अटैच कर सकते हैं।</span>
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="lensMessage" class="form-label">
+                <span class="en-content">Additional Notes</span>
+                <span class="hi-content">अतिरिक्त नोट्स</span>
+              </label>
+              <textarea id="lensMessage" name="message" class="form-textarea" placeholder="Any brand preference, budget, urgency, etc."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">
+              <span class="en-content">Send Quotation Request on WhatsApp</span>
+              <span class="hi-content">व्हाट्सएप पर कोटेशन रिक्वेस्ट भेजें</span>
             </button>
           </form>
         </div>

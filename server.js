@@ -71,7 +71,19 @@ const storage = multer.diskStorage({
     cb(null, `${Date.now()}-${base}${ext}`);
   }
 });
-const upload = multer({ storage });
+const upload = multer({
+  storage,
+  limits: {
+    fileSize: 5 * 1024 * 1024
+  },
+  fileFilter: (_req, file, cb) => {
+    if ((file.mimetype || '').startsWith('image/')) {
+      cb(null, true);
+      return;
+    }
+    cb(new Error('Only image files are allowed.'));
+  }
+});
 
 function ensureDir(dirPath) {
   if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath, { recursive: true });
@@ -137,6 +149,52 @@ app.get('/api/public/content', (_req, res) => {
   res.json(readContent());
 });
 
+app.post('/api/public/appointments', (req, res) => {
+  const name = String(req.body.name || '').trim();
+  const phone = String(req.body.phone || '').trim();
+  const email = String(req.body.email || '').trim();
+  const service = String(req.body.service || '').trim();
+  const date = String(req.body.date || '').trim();
+  const message = String(req.body.message || '').trim();
+
+  if (!name || !phone) {
+    return res.status(400).json({ message: 'Name and phone are required.' });
+  }
+
+  const content = readContent();
+  if (!Array.isArray(content.appointments)) {
+    content.appointments = [];
+  }
+
+  const appointment = {
+    id: createId('appt'),
+    name,
+    phone,
+    email,
+    service,
+    date,
+    message,
+    createdAt: new Date().toISOString()
+  };
+
+  content.appointments.unshift(appointment);
+  content.appointments = content.appointments.slice(0, 500);
+  writeContent(content);
+
+  return res.status(201).json({ ok: true, appointment });
+});
+
+app.post('/api/public/prescription-upload', upload.single('prescription'), (req, res) => {
+  if (!req.file) return res.status(400).json({ message: 'No prescription image uploaded.' });
+
+  const baseUrl = getBaseUrl(req);
+  return res.status(201).json({
+    ok: true,
+    filename: req.file.filename,
+    url: `${baseUrl}/uploads/${req.file.filename}`
+  });
+});
+
 app.post('/api/admin/login', (req, res) => {
   const username = String(req.body.username || '').trim();
   const password = String(req.body.password || '');
@@ -167,6 +225,25 @@ app.use('/api/admin', (req, res, next) => {
 
 app.get('/api/admin/content', (_req, res) => {
   res.json(readContent());
+});
+
+app.get('/api/admin/appointments', (_req, res) => {
+  const content = readContent();
+  res.json(content.appointments || []);
+});
+
+app.delete('/api/admin/appointments/:id', (req, res) => {
+  const content = readContent();
+  const list = Array.isArray(content.appointments) ? content.appointments : [];
+  const before = list.length;
+  content.appointments = list.filter((a) => a.id !== req.params.id);
+
+  if (content.appointments.length === before) {
+    return res.status(404).json({ message: 'Appointment not found.' });
+  }
+
+  writeContent(content);
+  return res.json({ ok: true });
 });
 
 app.put('/api/admin/content', (req, res) => {
